@@ -22,8 +22,8 @@ apt install build-essential git cmake ninja
 ### Build chdman
 
 ```
-git clone https://github.com/CharlesThobe/chdman.git
-cd chdman
+git clone https://github.com/Oscar1640/Chdman-Android.git --depth 1 chdman-android
+cd chdman-android
 cmake -B build -G Ninja
 cmake --build build
 ```
@@ -36,9 +36,3 @@ After you compile, run:
 ```
 cp build/chdman ~/../usr/bin/.
 ```
-
-> **Note**
->
-> You can copy `CMakeLists.txt`, `cmake_subdirs/`, `src/version.cpp` and
-> `src/osd/modules/lib/osd_getenv.cpp` over the MAME source tree and it will
-> build.
