@@ -36,3 +36,6 @@ After you compile, run:
 ```
 cp build/chdman ~/../usr/bin/.
 ```
+
+### Warning ⚠️
+can only be built for linux only.
