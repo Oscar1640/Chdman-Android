@@ -9,6 +9,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/3rdparty
     ${CMAKE_SOURCE_DIR}/3rdparty/expat/lib
     ${CMAKE_SOURCE_DIR}/3rdparty/zlib
+    ${CMAKE_SOURCE_DIR}/3rdparty/zstd/lib
     ${CMAKE_SOURCE_DIR}/3rdparty/flac/include
     ${CMAKE_SOURCE_DIR}/3rdparty/utf8proc
 )
