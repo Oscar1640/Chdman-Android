@@ -5,9 +5,9 @@ if(CMAKE_C_COMPILER_ID STREQUAL "Clang" OR CMAKE_SYSTEM_NAME STREQUAL "Android")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-shift-negative-value")
 endif()
 
-if(${CMAKE_GENERATOR} STREQUAL "Unix Makefiles" OR ${CMAKE_GENERATOR} STREQUAL "Ninja")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-strict-prototypes")
-endif()
+#if(${CMAKE_GENERATOR} STREQUAL "Unix Makefiles" OR ${CMAKE_GENERATOR} STREQUAL "Ninja")
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-strict-prototypes")
+#endif()
 
 add_compile_definitions(
     ZLIB_CONST

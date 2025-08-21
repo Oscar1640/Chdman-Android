@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
-project("chdman CBT edition")
-set(build_version "0.238-CBT_edition")
-set(vcs_revision "mame0238")
+project("chdman by OS1640")
+set(build_version "0.279-OS1640")
+set(vcs_revision "mame0279")
 #cd ../mame && git describe --dirty
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -9,6 +9,8 @@ set(CMAKE_BUILD_TYPE Release)
 endif()
 
 set(CMAKE_CXX_STANDARD 17) #needed by libocore and libutils. -
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_EXTENSIONS ON)
 #set globally to match MAME's genie scripts.
 
 if(WIN32)
@@ -45,7 +47,7 @@ target_include_directories(chdman PRIVATE
   ${CMAKE_SOURCE_DIR}/src/osd
   ${CMAKE_SOURCE_DIR}/src/lib/util
   ${CMAKE_SOURCE_DIR}/3rdparty
-  ${CMAKE_SOURCE_DIR}/3rdparty/libflac/include
+  ${CMAKE_SOURCE_DIR}/3rdparty/flac/include
 )
 set_property(TARGET chdman PROPERTY CXX_STANDARD 17)
 target_compile_definitions(chdman PRIVATE
@@ -53,7 +55,7 @@ target_compile_definitions(chdman PRIVATE
   BARE_VCS_REVISION="${vcs_revision}"
 )
 
-target_link_libraries(chdman PRIVATE utils expat 7z ocore_sdl zlib flac utf8proc)
+target_link_libraries(chdman PRIVATE utils expat 7z ocore_sdl zlib flac utf8proc zstd)
 
 if(UNIX)
 target_link_libraries(chdman PRIVATE pthread util)

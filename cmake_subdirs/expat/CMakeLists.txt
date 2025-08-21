@@ -3,21 +3,24 @@
 set(expat_dir ${CMAKE_SOURCE_DIR}/3rdparty/expat)
 
 add_compile_definitions(
+    HAVE_CXX11
     HAVE_MEMMOVE
     HAVE_STDINT_H
+    HAVE_STDIO_H
     HAVE_STDLIB_H
     HAVE_STRING_H
     PACKAGE=expat
-    PACKAGE_BUGREPORT="expat-bugs@libexpat.org"
+    PACKAGE_BUGREPORT="https://github.com/libexpat/libexpat/issues"
     PACKAGE_NAME=expat
-    PACKAGE_STRING="expat 2.2.10"
+    PACKAGE_STRING="expat-2.7.1"
     PACKAGE_TARNAME=expat
     PACKAGE_URL=
-    PACKAGE_VERSION="2.2.10"
+    PACKAGE_VERSION="2.7.1"
     STDC_HEADERS
-    VERSION="2.2.10"
+    VERSION="2.7.1"
     XML_CONTEXT_BYTES=1024
     XML_DTD
+    XML_GE=1
     XML_NS
 )
 

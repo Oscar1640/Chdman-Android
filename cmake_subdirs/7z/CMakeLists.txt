@@ -5,13 +5,13 @@ if(CMAKE_GENERATOR STREQUAL "Unix Makefiles" OR CMAKE_GENERATOR STREQUAL "Ninja"
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-strict-prototypes -Wno-undef")
 endif()
 
-if(CMAKE_C_COMPILER_ID STREQUAL "Clang" AND CMAKE_C_COMPILER_VERSION VERSION_GREATER 10.0)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-misleading-indentation")
-endif()
+#if(CMAKE_C_COMPILER_ID STREQUAL "Clang" AND CMAKE_C_COMPILER_VERSION VERSION_GREATER 10.0)
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-misleading-indentation")
+#endif()
 
 add_compile_definitions(
-    _7ZIP_PPMD_SUPPPORT
-    _7ZIP_ST
+    Z7_PPMD_SUPPPORT
+    Z7_ST
 )
 
 add_library(7z STATIC
@@ -34,15 +34,13 @@ add_library(7z STATIC
     ${7z_dir}/C/CpuArch.c
     ${7z_dir}/C/Delta.c
     ${7z_dir}/C/LzFind.c
+    ${7z_dir}/C/LzFindOpt.c
     ${7z_dir}/C/Lzma2Dec.c
-    ${7z_dir}/C/Lzma2Enc.c
-    ${7z_dir}/C/Lzma86Dec.c
-    ${7z_dir}/C/Lzma86Enc.c
     ${7z_dir}/C/LzmaDec.c
     ${7z_dir}/C/LzmaEnc.c
     ${7z_dir}/C/Ppmd7.c
     ${7z_dir}/C/Ppmd7Dec.c
-    ${7z_dir}/C/Ppmd7Enc.c
     ${7z_dir}/C/Sha256.c
+    ${7z_dir}/C/Sha256Opt.c
     ${7z_dir}/C/Sort.c
 )
